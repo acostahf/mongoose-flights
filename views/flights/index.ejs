@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Flight</th>
+      <th>Flight<br>Number</th>
+      <th>Depart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% flights.forEach(function(m) { %>
+      <tr>
+        <td><%= m.airline %></td>
+        <td><%= m.flightNo %></td>
+        <td><%= m.departs %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+  <%- include('../partials/footer') %>

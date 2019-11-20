@@ -2,9 +2,23 @@ var Flight = require('../models/flight')
 
 
 module.exports = {
-    index,
-    new: newFlight,
-    create
+  index,
+  new: newFlight,
+  create,
+  show
+}
+
+function index(req, res) {
+  Flight.find({}, function(err, flights) {
+    res.render('flights/index', { title: 'All Flights', flights });
+  });
+}
+
+//flight has to match with the show flight.airline ect.
+function show(req, res) {
+  Flight.findById(req.params.id, function (err, flight){
+       res.render('flights/show', {title: 'Flight Detail', flight});
+});
 }
 
 function create(req, res) {
@@ -18,13 +32,6 @@ function create(req, res) {
     if (err) return res.redirect('/flights/new');
     console.log(flight);
     res.redirect(`/flights/`);
-  });
-}
-
-
-function index(req, res) {
-  Flight.find({}, function(err, flights) {
-    res.render('flights/index', { title: 'All Flights', flights });
   });
 }
 

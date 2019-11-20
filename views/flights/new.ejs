@@ -8,7 +8,14 @@
     <input type="number" name="flightNo"><br>
     <label>Departs:</label><br>
     <input type="date" name="departs"><br>
-    <input type="submit" value="Add Flight">
   </form>
-
+  <select name="airport">
+    <option value="1">ATX</option>
+    <option value="2">SAN</option>
+    <option value="3">SEA</option>
+    <option value="4">LAX</option>
+    <option value="5">DAL</option>
+  </select>
+  <input type="submit" value="Add Flight">
+  
   <%- include('../partials/footer') %>

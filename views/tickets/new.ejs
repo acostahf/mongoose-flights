@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h2>Tickets</h2>
+<form id="new-form" action="/flights/<%= flightId %>/tickets" method="POST">
+  <label>Seat:</label>
+  <input type="text" name="seat">
+  <label>Price:</label>
+  <input type="number" name="price">
+  <input type="submit" value="Add Ticket">
+</form>
+</table>
+<table id='list'>
+    <thead>
+        <th>Seat</th>
+        <th>Price</th>
+    </thead>
+    <% ticket.forEach(function(t){ %>
+      <tbody>
+      <tr>
+            <td><%= t.seat %></td>
+            <td><%= t.price %></td>
+        </tr>
+        </tbody>
+    <% }) %>
+      </table>
